@@ -1,0 +1,9 @@
+# Ignore IntelliJ IDEA files
+.idea
+
+# Ignore Gradle files
+.gradle
+**/build/
+!**/src/**/build/
+!gradle-wrapper.jar
+!gradle-wrapper.properties
