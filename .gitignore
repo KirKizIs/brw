@@ -1,9 +1,15 @@
-# Ignore IntelliJ IDEA files
+#IDE
 .idea
 
-# Ignore Gradle files
+# JAVA
 .gradle
 **/build/
 !**/src/**/build/
 !gradle-wrapper.jar
 !gradle-wrapper.properties
+
+#PYTHON
+.venv
+
+#ETC
+.env
