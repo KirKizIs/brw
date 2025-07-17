@@ -1,0 +1,29 @@
+services:
+  db-schedule:
+    image: postgres:latest
+    container_name: schedule-db
+    environment:
+      POSTGRES_DB: ${POSTGRES_DB}
+      POSTGRES_USER: ${POSTGRES_USER}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD}
+    ports:
+      - "5432:5432"
+    volumes:
+      - db-schedule-data:/var/lib/postgresql/data
+
+  schedule-api:
+    build:
+      context: ./backend/schedule/
+      dockerfile: Dockerfile
+    container_name: schedule-api-app
+    ports:
+      - "${SPRING_PORT}:8080"
+    environment:
+      SPRING_DATASOURCE_URL: ${SPRING_DATASOURCE_URL}
+      SPRING_DATASOURCE_USERNAME: ${SPRING_DATASOURCE_USERNAME}
+      SPRING_DATASOURCE_PASSWORD: ${SPRING_DATASOURCE_PASSWORD}
+    depends_on:
+      - db-schedule
+
+volumes:
+  db-schedule-data:
