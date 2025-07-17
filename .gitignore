@@ -1,0 +1,20 @@
+# IDE
+.idea/
+
+# JAVA
+.gradle/
+gradle/
+gradle-app.setting
+!gradle-wrapper.jar
+!gradle-wrapper.properties
+build/
+*.class
+*.ktlint
+*.log
+*.tmp
+*.jar
+*.war
+*.ear
+
+# ETC
+*.env
