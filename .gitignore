@@ -7,6 +7,8 @@ gradle/
 gradle-app.setting
 !gradle-wrapper.jar
 !gradle-wrapper.properties
+gradlew
+gradlew.bat
 build/
 *.class
 *.ktlint
